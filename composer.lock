@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "315a0ff03908f50e3b8ac8cd4fb05449",
+    "content-hash": "8c32f4bc344fb0bdcaa7dae0a5b31a3b",
     "packages": [
         {
             "name": "brick/math",
@@ -3505,21 +3505,21 @@
         },
         {
             "name": "realrashid/sweet-alert",
-            "version": "v6.0.0",
+            "version": "v7.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/realrashid/sweet-alert.git",
-                "reference": "efe53185ddd48ef1cc22399bfdae55e83fe36bf2"
+                "reference": "81eb61745002b7fbe2276cbb64214f678584df5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/realrashid/sweet-alert/zipball/efe53185ddd48ef1cc22399bfdae55e83fe36bf2",
-                "reference": "efe53185ddd48ef1cc22399bfdae55e83fe36bf2",
+                "url": "https://api.github.com/repos/realrashid/sweet-alert/zipball/81eb61745002b7fbe2276cbb64214f678584df5c",
+                "reference": "81eb61745002b7fbe2276cbb64214f678584df5c",
                 "shasum": ""
             },
             "require": {
                 "laravel/framework": "^5.6|^6.0|^7.0|^8.0|^9.0|^9.11|9.14.*|^10.0",
-                "php": "^7.2|^8.0"
+                "php": "^7.2|^8.0|^8.1"
             },
             "require-dev": {
                 "symfony/thanks": "^1.0"
@@ -3555,7 +3555,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "A BEAUTIFUL, RESPONSIVE, CUSTOMIZABLE, ACCESSIBLE (WAI-ARIA) REPLACEMENT FOR JAVASCRIPT'S POPUP BOXES FOR LARAVEL BY RASHID ALI",
+            "description": "Laravel Sweet Alert Is A Package For Laravel Provides An Easy Way To Display Alert Messages Using The SweetAlert2 Library.",
             "homepage": "https://github.com/realrashid/sweet-alert",
             "keywords": [
                 "alert",
@@ -3591,20 +3591,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-15T07:13:11+00:00"
+            "time": "2023-04-20T01:23:24+00:00"
         },
         {
             "name": "spatie/laravel-permission",
-            "version": "5.10.0",
+            "version": "5.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "5d0a703ece4636e6bde98eb85ac72b40aa6e42bc"
+                "reference": "671e46e079cbd4990a98427daaa09f4977b57ca9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/5d0a703ece4636e6bde98eb85ac72b40aa6e42bc",
-                "reference": "5d0a703ece4636e6bde98eb85ac72b40aa6e42bc",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/671e46e079cbd4990a98427daaa09f4977b57ca9",
+                "reference": "671e46e079cbd4990a98427daaa09f4977b57ca9",
                 "shasum": ""
             },
             "require": {
@@ -3665,7 +3665,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-permission/issues",
-                "source": "https://github.com/spatie/laravel-permission/tree/5.10.0"
+                "source": "https://github.com/spatie/laravel-permission/tree/5.10.2"
             },
             "funding": [
                 {
@@ -3673,7 +3673,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-22T02:57:36+00:00"
+            "time": "2023-07-04T13:38:13+00:00"
         },
         {
             "name": "symfony/console",

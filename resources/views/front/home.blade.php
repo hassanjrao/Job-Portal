@@ -1,14 +1,29 @@
 @extends('layouts.front')
 
 @section('content')
-    <div class="bg-body-light">
+    <div class="bg-custom-primary">
         <div class="content content-full">
-            <div class="py-1 text-center">
-                <h1 class="h3 fw-bold mb-1">
-                    {{ __('Latest Jobs') }}
-                </h1>
+
+
+            <div class="content-header p-5">
+                <div class="row align-items-center justify-content-center ">
+
+                    <div class="col-lg-6">
+
+                        <a class="fw-semibold fs-5 tracking-wider text-white me-3" href="index.html">
+                            <img src="{{ asset('logo/main_logo.png') }}" alt="Logo" class="img-fluid">
+                        </a>
+
+
+                    </div>
+                </div>
 
             </div>
+
+            {{-- </div> --}}
+
+
+
         </div>
     </div>
 
@@ -18,70 +33,111 @@
         <section>
             <div class="row mb-4 justify-content-center">
 
-                <div class="col-lg-4">
-                    <select class="js-select2 form-select" id="location" name="location" style="width: 100%;" data-placeholder="Location" multiple>
-                        <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                        <option value="1" selected>HTML</option>
-                        <option value="2" selected>CSS</option>
-                        <option value="3">JavaScript</option>
-                        <option value="4">PHP</option>
-                        <option value="5">MySQL</option>
-                        <option value="6">Ruby</option>
-                        <option value="7">Angular</option>
-                        <option value="8">React</option>
-                        <option value="9">Vue.js</option>
-                      </select>
+                <div class="col-lg-4  mt-2">
+                    <select class="form-select" onchange="locationSelected(this)" id="location" name="location" style="width: 100%;" placeholder="Location">
+                        <option value="" selected disabled>{{ __('Select Location') }}</option>
+                        <option value="all">{{ __('All') }}</option>
+                        @foreach ($locations as $location)
+                            <option {{ $location->id==$locationSelected ? "selected" : "" }} value="{{ $location->id }}">
+                                {{ $location->name }}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
 
-                <div class="col-lg-4 text-center">
-                    <select class="js-select2 form-select" id="Categories" name="Categories" style="width: 100%;" data-placeholder="Categories" multiple>
-                        <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                        <option value="1" selected>HTML</option>
-                        <option value="2" selected>CSS</option>
-                        <option value="3">JavaScript</option>
-                        <option value="4">PHP</option>
-                        <option value="5">MySQL</option>
-                        <option value="6">Ruby</option>
-                        <option value="7">Angular</option>
-                        <option value="8">React</option>
-                        <option value="9">Vue.js</option>
-                      </select>
-                </div>
-
-                <div class="col-lg-2">
-
-                    <button type="button" class="btn btn-secondary me-1 mb-3">
-                        <i class="fa fa-fw fa-upload me-1"></i> Upload
-                      </button>
-                </div>
 
             </div>
         </section>
 
         <section>
+
+            <div class="row">
+
+                <div class="col-lg-12 text-center">
+
+                    <h4>
+
+                        {{ __('Latest Jobs') }}
+                    </h4>
+
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-12 text-center">
+
+
+                    <ul class="nav nav-pills push">
+                        <li class="nav-item me-1">
+                            <a class="nav-link  {{ $categorySelected == 'all' ? 'active bg-custom-primary' : '' }}"
+                                href="{{ route('home', ['category' => 'all']) }}">
+                                {{ __('All') }}
+
+                            </a>
+                        </li>
+
+                        @foreach ($jobCategories as $category)
+
+                            <li class="nav-item me-1">
+                                <a class="nav-link  {{ $categorySelected == $category->id ? 'active bg-custom-primary' : '' }}"
+                                    href="{{ route('home', ['category' => $category->id]) }}">
+                                    {{ $category->name }}
+
+                                </a>
+                            </li>
+
+                        @endforeach
+
+
+
+                    </ul>
+                </div>
+            </div>
             <div class="row items-push">
+
 
                 @foreach ($jobs as $job)
                     <div class="col-md-6 col-xl-6">
-                        <div class="block block-rounded h-100 mb-0">
+                        <div class="block block-rounded">
 
-                            <div class="p-3">
-                                <div class="d-flex justify-content-between align-items-center">
 
-                                    <div class="">
-                                        <a class="h6" href="be_pages_ecom_store_product.html">Cooperative training
-                                            in the Board of Grievances courts - all cities Cooperative training
-                                            in the Board of Grievances courts - all cities</a>
+                            <div
+                                class=" d-flex justify-content-between align-items-center {{ app()->getLocale() == 'ar' ? 'flex-row-reverse' : '' }}">
+
+                                <div class=" flex-fill">
+                                    <a class="h6 text-custom-primary p-2" href="be_pages_ecom_store_product.html">
+                                        {{ $job->title }}
+                                    </a>
+
+                                    <div class="d-flex p-2 pt-4 justify-content-between">
+                                        <div class="align-self-end">
+
+                                            <i class="fa fa-fw fa-calendar-alt text-muted me-1"></i>
+                                            {{ $job->created_at->format('Y-m-d') }}
+                                        </div>
+
+
 
                                     </div>
-                                    <img class="img-fluid options-item" width="100px"
-                                        src="{{ asset('media/various/ecom_product6.png') }}" alt="">
 
                                 </div>
+
+                                <div>
+                                    <img class="img-fluid" style="width: 100px; height: 100px;" src="{{ $job->image }}"
+                                        alt="">
+                                </div>
+
                             </div>
+
+
+
                         </div>
                     </div>
                 @endforeach
+
+                {{ $jobs->links() }}
 
 
 
@@ -89,4 +145,21 @@
         </section>
     </div>
     <!-- END Page Content -->
+@endsection
+
+@section('js_after')
+
+<script>
+    function locationSelected(e){
+        let value=e.value;
+
+        if(value == 'all'){
+            window.location.href="{{ route('home') }}";
+        }else{
+            window.location.href="{{ route('home') }}?location="+value;
+        }
+
+    }
+</script>
+
 @endsection
