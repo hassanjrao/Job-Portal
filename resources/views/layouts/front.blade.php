@@ -168,14 +168,14 @@
                             </li>
 
                             <li class="nav-main-item ms-lg-auto">
-                                <a class="nav-main-link " href="#">
+                                <a class="nav-main-link " href="{{ route("home") }}">
                                     {{ __('Home') }}
                                 </a>
 
                             </li>
                             <li class="nav-main-item ">
-                                <a class="nav-main-link " href="#">
-                                    {{ __('Contact Us') }}
+                                <a class="nav-main-link " href="{{ route("home.about-us") }}">
+                                    {{ __('About Us') }}
                                 </a>
 
                             </li>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutUs;
 use App\Models\Job;
 use App\Models\JobCategory;
 use App\Models\Location;
@@ -43,9 +44,14 @@ class HomeController extends Controller
 
         $job->increment("total_views");
 
-        
+
 
 
         return view("front.jobs.show",compact("job"));
+    }
+
+    public function aboutUs(){
+        $aboutUs=AboutUs::first();
+        return view("front.about-us.index",compact("aboutUs"));
     }
 }

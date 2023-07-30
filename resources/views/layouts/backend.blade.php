@@ -179,6 +179,13 @@
                                 </a>
                             </li>
 
+                            <li class="nav-main-item">
+                                <a class="nav-main-link{{ request()->segment(2) == 'about-us' ? ' active' : '' }}" href="{{ route("admin.about-us.index") }}">
+                                    <i class="nav-main-link-icon fa fa-info-circle"></i>
+                                    <span class="nav-main-link-name">About Us</span>
+                                </a>
+                            </li>
+
                         </ul>
                     </div>
                     <!-- END Side Navigation -->
