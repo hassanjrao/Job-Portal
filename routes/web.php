@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/",[HomeController::class,"index"])->name("home");
 
+Route::get("jobs/{id}/{slug}",[HomeController::class,"job"])->name("home.job");
+
 Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);
 
 Route::get('lang/change', [LanguageController::class, 'change'])->name('lang.change');

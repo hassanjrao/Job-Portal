@@ -23,7 +23,7 @@ class HomeController extends Controller
         ->when($locationSelected!=="all",function($query) use($locationSelected){
             return $query->where("location_id",$locationSelected);
         })
-
+        ->latest()
         ->paginate(15);
 
 
@@ -34,5 +34,18 @@ class HomeController extends Controller
 
         return view("front.home",compact("jobs","categorySelected","locations","jobCategories","locationSelected"));
 
+    }
+
+
+    public function job($id,$slug){
+
+        $job=Job::findOrFail($id);
+
+        $job->increment("total_views");
+
+        
+
+
+        return view("front.jobs.show",compact("job"));
     }
 }

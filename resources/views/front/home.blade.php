@@ -1,32 +1,6 @@
 @extends('layouts.front')
 
 @section('content')
-    <div class="bg-custom-primary">
-        <div class="content content-full">
-
-
-            <div class="content-header p-5">
-                <div class="row align-items-center justify-content-center ">
-
-                    <div class="col-lg-6">
-
-                        <a class="fw-semibold fs-5 tracking-wider text-white me-3" href="index.html">
-                            <img src="{{ asset('logo/main_logo.png') }}" alt="Logo" class="img-fluid">
-                        </a>
-
-
-                    </div>
-                </div>
-
-            </div>
-
-            {{-- </div> --}}
-
-
-
-        </div>
-    </div>
-
     <!-- Page Content -->
     <div class="content">
 
@@ -34,11 +8,12 @@
             <div class="row mb-4 justify-content-center">
 
                 <div class="col-lg-4  mt-2">
-                    <select class="form-select" onchange="locationSelected(this)" id="location" name="location" style="width: 100%;" placeholder="Location">
+                    <select class="form-select" onchange="locationSelected(this)" id="location" name="location"
+                        style="width: 100%;" placeholder="Location">
                         <option value="" selected disabled>{{ __('Select Location') }}</option>
                         <option value="all">{{ __('All') }}</option>
                         @foreach ($locations as $location)
-                            <option {{ $location->id==$locationSelected ? "selected" : "" }} value="{{ $location->id }}">
+                            <option {{ $location->id == $locationSelected ? 'selected' : '' }} value="{{ $location->id }}">
                                 {{ $location->name }}
                             </option>
                         @endforeach
@@ -79,7 +54,6 @@
                         </li>
 
                         @foreach ($jobCategories as $category)
-
                             <li class="nav-item me-1">
                                 <a class="nav-link  {{ $categorySelected == $category->id ? 'active bg-custom-primary' : '' }}"
                                     href="{{ route('home', ['category' => $category->id]) }}">
@@ -87,7 +61,6 @@
 
                                 </a>
                             </li>
-
                         @endforeach
 
 
@@ -95,6 +68,20 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="row">
+
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9764394862584545"
+                    crossorigin="anonymous"></script>
+                <!-- square ad -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9764394862584545"
+                    data-ad-slot="4866663033" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+            </div>
+
             <div class="row items-push">
 
 
@@ -104,10 +91,11 @@
 
 
                             <div
-                                class=" d-flex justify-content-between align-items-center {{ app()->getLocale() == 'ar' ? 'flex-row-reverse' : '' }}">
+                                class=" d-flex justify-content-between align-items-center {{ app()->getLocale() == 'ar' ? 'flex-row-reverse' : 'flex-row-reverse' }}">
 
                                 <div class=" flex-fill">
-                                    <a class="h6 text-custom-primary p-2" href="be_pages_ecom_store_product.html">
+                                    <a class="h6 text-custom-primary p-2"
+                                        href="{{ route('home.job', ['id' => $job->id, 'slug' => $job->slug]) }}">
                                         {{ $job->title }}
                                     </a>
 
@@ -124,9 +112,9 @@
 
                                 </div>
 
-                                <div>
-                                    <img class="img-fluid" style="width: 100px; height: 100px;" src="{{ $job->image }}"
-                                        alt="">
+                                <div class="border">
+                                    <img class="img-fluid" style="width: 100px; height: 100px;"
+                                        src="{{ Storage::url($job->image) }}" alt="">
                                 </div>
 
                             </div>
@@ -148,18 +136,16 @@
 @endsection
 
 @section('js_after')
+    <script>
+        function locationSelected(e) {
+            let value = e.value;
 
-<script>
-    function locationSelected(e){
-        let value=e.value;
+            if (value == 'all') {
+                window.location.href = "{{ route('home') }}";
+            } else {
+                window.location.href = "{{ route('home') }}?location=" + value;
+            }
 
-        if(value == 'all'){
-            window.location.href="{{ route('home') }}";
-        }else{
-            window.location.href="{{ route('home') }}?location="+value;
         }
-
-    }
-</script>
-
+    </script>
 @endsection

@@ -14742,7 +14742,7 @@ a.block.block-themed .btn-block-option:focus,
   min-height: 2.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #334155;
+  /* color: white; */
 }
 .nav-main-link .nav-main-link-icon {
   flex: 0 0 auto;
@@ -14766,8 +14766,8 @@ a.block.block-themed .btn-block-option:focus,
   font-size: 0.75rem;
 }
 .nav-main-link:hover, .nav-main-link:focus {
-  color: #334155;
-  background-color: #f6f7f9;
+  color: white !important;
+  background-color: #4FA0BA;
   outline: 0 !important;
 }
 .nav-main-link:hover > .nav-main-link-icon, .nav-main-link:focus > .nav-main-link-icon {

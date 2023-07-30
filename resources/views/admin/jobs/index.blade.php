@@ -34,7 +34,7 @@
                                 <th>#</th>
                                 <th>Category</th>
                                 <th>Location</th>
-                                <th>Type</th>
+                                <th>Total Views</th>
                                 <th>Title En</th>
                                 <th>Title Ar</th>
                                 <th>Description En</th>
@@ -50,16 +50,17 @@
                         <tbody>
                             @foreach ($jobs as $ind => $location)
 
+
+
                                 <tr>
 
                                     <td>{{ $ind + 1 }}</td>
 
                                     <td>{{ $location->category ? $location->category->name_en_ar : '-' }}</td>
 
-                                    <td>{{ $location->location ?$location->location->name_en_er : "-" }}</td>
+                                    <td>{{ $location->location ?$location->location->name_en_ar : "-" }}</td>
 
-
-                                    <td>{{ $location->type_name_en_ar }}</td>
+                                    <td>{{ $location->total_views }}</td>
 
                                     <td>
                                         {{ $location->title_en }}

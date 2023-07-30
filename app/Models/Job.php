@@ -12,7 +12,7 @@ class Job extends Model
 
     protected $guarded = [];
 
-    protected $appends=["type_name_en_ar","title"];
+    protected $appends=["type_name_en_ar","title","slug","description"];
 
     public function category()
     {
@@ -27,6 +27,14 @@ class Job extends Model
 
     public function getTitleAttribute(){
         return app()->getLocale()=="en"?$this->title_en:$this->title_ar;
+    }
+
+    public function getSlugAttribute(){
+        return app()->getLocale()=="en"?$this->slug_en:$this->slug_ar;
+    }
+
+    public function getDescriptionAttribute(){
+        return app()->getLocale()=="en"?$this->description_en:$this->description_ar;
     }
 
 

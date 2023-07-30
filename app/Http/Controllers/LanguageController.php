@@ -9,7 +9,7 @@ class LanguageController extends Controller
 {
     public function change(Request $request)
     {
-        $lang="ar";
+        $lang=$request->lang;
         App::setLocale($lang);
         session()->put('locale', $lang);
 

@@ -6,6 +6,7 @@ use App\Models\Job;
 use App\Models\JobCategory;
 use App\Models\Location;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class AdminJobController extends Controller
 {
@@ -61,26 +62,25 @@ class AdminJobController extends Controller
 
         $locations=Location::latest()->get();
 
-        $jobObj=new Job();
+        return view("admin.jobs.add_edit",compact("job","categories","locations"));
+    }
 
-        $types=$jobObj->types();
-
-        $jobTypes=[];
-
-        foreach($types as $key=>$type){
-
-            $jobTypes[]=$type;
+    public function slug($string, $separator = '-') {
+        if (is_null($string)) {
+            return "";
         }
 
-        // merge english and arabic types
-        $jobTypes=array_merge($jobTypes[0],$jobTypes[1]);
+        $string = trim($string);
 
-        // dd($jobTypes);
+        $string = mb_strtolower($string, "UTF-8");;
 
+        $string = preg_replace("/[^a-z0-9_\sءاأإآؤئبتثجحخدذرزسشصضطظعغفقكلمنهويةى]#u/", "", $string);
 
+        $string = preg_replace("/[\s-]+/", " ", $string);
 
+        $string = preg_replace("/[\s_]/", $separator, $string);
 
-        return view("admin.jobs.add_edit",compact("job","categories","locations","jobTypes"));
+        return $string;
     }
 
     /**
@@ -91,7 +91,34 @@ class AdminJobController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "title_en"=>"required",
+            "title_ar"=>"required",
+            "description_en"=>"required",
+            "description_ar"=>"required",
+            "category"=>"required|exists:job_categories,id",
+            "location"=>"required|exists:locations,id",
+            "image"=>"required|image"
+        ]);
+
+        $image=$request->file("image")->store("jobs");
+
+        $slug_ar=$this->slug($request->title_ar,"-");
+        $slug_en=Str::slug($request->title_en,"-");
+
+        Job::create([
+            "title_en"=>$request->title_en,
+            "title_ar"=>$request->title_ar,
+            "description_en"=>$request->description_en,
+            "description_ar"=>$request->description_ar,
+            "job_category_id"=>$request->category,
+            "location_id"=>$request->location,
+            "image"=>$image,
+            "slug_en"=>$slug_en,
+            "slug_ar"=>$slug_ar,
+        ]);
+
+        return redirect()->route("admin.jobs.index")->with("success","Job has been added successfully");
     }
 
     /**
@@ -113,7 +140,13 @@ class AdminJobController extends Controller
      */
     public function edit($id)
     {
-        //
+        $job=Job::findOrFail($id);
+
+        $categories=JobCategory::latest()->get();
+
+        $locations=Location::latest()->get();
+
+        return view("admin.jobs.add_edit",compact("job","categories","locations"));
     }
 
     /**
@@ -125,7 +158,40 @@ class AdminJobController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $job=Job::findOrFail($id);
+
+        $request->validate([
+            "title_en"=>"required",
+            "title_ar"=>"required",
+            "description_en"=>"required",
+            "description_ar"=>"required",
+            "category"=>"required|exists:job_categories,id",
+            "location"=>"required|exists:locations,id",
+            "image"=>"nullable|image"
+        ]);
+
+        $slug_ar=$this->slug($request->title_ar,"-");
+        $slug_en=Str::slug($request->title_en,"-");
+
+        $dataToUpdate=[
+            "title_en"=>$request->title_en,
+            "title_ar"=>$request->title_ar,
+            "description_en"=>$request->description_en,
+            "description_ar"=>$request->description_ar,
+            "job_category_id"=>$request->category,
+            "location_id"=>$request->location,
+            "slug_en"=>$slug_en,
+            "slug_ar"=>$slug_ar,
+        ];
+
+        if($request->hasFile("image")){
+            $image=$request->file("image")->store("jobs");
+            $dataToUpdate["image"]=$image;
+        }
+
+        $job->update($dataToUpdate);
+
+        return redirect()->route("admin.jobs.index")->with("success","Job has been updated successfully");
     }
 
     /**
