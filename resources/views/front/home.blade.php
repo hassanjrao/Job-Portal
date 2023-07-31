@@ -10,8 +10,7 @@
                 <div class="col-lg-4  mt-2">
                     <select class="form-select" onchange="locationSelected(this)" id="location" name="location"
                         style="width: 100%;" placeholder="Location">
-                        <option value="" selected disabled>{{ __('Select Location') }}</option>
-                        <option value="all">{{ __('All') }}</option>
+                        <option value="all" selected>{{ __('All') }}</option>
                         @foreach ($locations as $location)
                             <option {{ $location->id == $locationSelected ? 'selected' : '' }} value="{{ $location->id }}">
                                 {{ $location->name }}
