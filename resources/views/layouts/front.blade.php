@@ -133,7 +133,7 @@
             <div class="bg-primary-darker">
                 <div class="content py-3">
                     <!-- Toggle Main Navigation -->
-                    <div class="d-lg-none">
+                    {{-- <div class="d-lg-none">
                         <!-- Class Toggle, functionality initialized in Helpers.oneToggleClass() -->
                         <button type="button"
                             class="btn w-100 btn-alt-secondary d-flex justify-content-between align-items-center"
@@ -141,11 +141,11 @@
                             {{ __('Menu') }}
                             <i class="fa fa-bars"></i>
                         </button>
-                    </div>
+                    </div> --}}
                     <!-- END Toggle Main Navigation -->
 
                     <!-- Main Navigation -->
-                    <div id="main-navigation" class="d-none d-lg-block mt-2 mt-lg-0">
+                    <div id="main-navigation" class=" d-lg-block mt-2 mt-lg-0">
                         <ul class="nav-main  nav-main-horizontal nav-main-hover">
                             <li class="nav-main-item">
 
@@ -177,6 +177,35 @@
                                 <a class="nav-main-link " href="{{ route("home.about-us") }}">
                                     {{ __('About Us') }}
                                 </a>
+
+                            </li>
+                            <li class="nav-main-item ">
+                                <a class="nav-main-link " href="{{ route("home.about-us") }}">
+                                    {{ __('Contact Us') }}
+                                </a>
+
+                            </li>
+
+                            <li class="nav-main-item">
+                                {{-- social media links --}}
+                                <div class=" d-flex justify-content-between align-items-center mt-2">
+
+                                    <a class="" href="#">
+                                        <i class="fab fa-facebook"></i>
+                                    </a>
+
+                                    <a class="" href="#">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+
+                                    <a class="ml-4" href="#">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+
+
+
+
 
                             </li>
 
