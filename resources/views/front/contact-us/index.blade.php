@@ -47,13 +47,13 @@
                             <div class="row">
 
                                 <div class="col-lg-6">
-                                    <h4>Email: </h4>
+                                    <h4>{{ __("Email") }}: </h4>
                                     <p>{{ 'contact@m.com' }}</p>
 
-                                    <h4>Whatsapp: </h4>
+                                    <h4>{{ __("Whatsapp") }}: </h4>
                                     <p>{{ '932423432432' }}</p>
 
-                                    <h4>Instagramd</h4>
+                                    <h4>{{ __("Instagram") }}</h4>
                                     <p>{{ 'https://www.instagram.com/' }}</p>
                                 </div>
 
