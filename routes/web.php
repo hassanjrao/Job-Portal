@@ -26,6 +26,8 @@ Route::get("/",[HomeController::class,"index"])->name("home");
 
 Route::get("about-us",[HomeController::class,"aboutUs"])->name("home.about-us");
 
+Route::get("contact-us",[HomeController::class,"contactUs"])->name("home.contact-us");
+
 Route::get("jobs/{id}/{slug}",[HomeController::class,"job"])->name("home.job");
 
 Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);

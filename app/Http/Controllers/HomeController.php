@@ -54,4 +54,8 @@ class HomeController extends Controller
         $aboutUs=AboutUs::first();
         return view("front.about-us.index",compact("aboutUs"));
     }
+
+    public function contactUs(){
+        return view("front.contact-us.index");
+    }
 }
