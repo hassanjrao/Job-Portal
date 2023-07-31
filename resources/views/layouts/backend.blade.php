@@ -235,12 +235,19 @@
                                 </div>
                                 <div class="p-2">
 
-                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="{{ route("admin.profile.index") }}">
                                         <span class="fs-sm fw-medium">Profile</span>
 
                                     </a>
-                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                                        <span class="fs-sm fw-medium">Logout</span>
+                                    <form action="{{ route('logout') }}" id="logout-form" method="POST">
+                                        @csrf
+
+                                    </form>
+
+
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                        onclick="document.getElementById('logout-form').submit()">
+                                        <span class="fs-sm fw-medium">Log Out</span>
                                     </a>
                                 </div>
 

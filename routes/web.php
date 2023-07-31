@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminJobCategoryController;
 use App\Http\Controllers\AdminJobController;
 use App\Http\Controllers\AdminLocationController;
+use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Auth;
@@ -43,5 +44,8 @@ Route::middleware(["auth"])->group(function () {
         Route::resource("jobs",AdminJobController::class);
 
         Route::resource("about-us",AdminAboutUsController::class)->only(["index","update"]);
+
+
+        Route::resource("profile",AdminProfileController::class)->only(["index","update"]);
     });
 });
