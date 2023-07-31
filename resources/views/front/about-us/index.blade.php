@@ -42,8 +42,8 @@
                     <div class="block block-rounded">
 
 
-                        <div class="block-content block-content-full">
-                            {!! $aboutUs->description !!}
+                        <div class="block-content block-content-full text-center">
+                            <img src="{{ Storage::url($aboutUs->image) }}" alt="" class="img-fluid">
                         </div>
 
                     </div>

@@ -34,48 +34,33 @@
                     <div class="col-lg-12 ">
 
 
-                        <div class="row mb-4">
+                        <div class="row mb-4 justify-content-between">
 
-
-                            <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="col-lg-8 col-md-8 col-sm-12">
                                 <?php
-                                $value = old('description_en', $aboutUs ? $aboutUs->description_en : null);
-
+                                $value = old('image', $aboutUs ? $aboutUs->image : null);
                                 ?>
-                                <label class="form-label" for="label">Description En <span
-                                        class="text-danger">*</span></label>
-
-                                <textarea name="description_en" id="editorEn" class="form-control" cols="30" rows="10"
-                                    placeholder="Write Description in English">{{ $value }}</textarea>
-
-                                @error('description_en')
+                                @if ($value)
+                                    <img src="{{ asset(Storage::url($value)) }}" alt="" width="500px"
+                                        height="500px">
+                                        <br>
+                                @endif
+                            </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                <label class="form-label" for="label">Image <span class="text-danger">*</span></label>
+                                <input {{ $aboutUs ? '' : 'required' }} type="file" class="form-control mt-2" id="image"
+                                    name="image" accept="image/*"
+                                    >
+                                @error('image')
                                     <span class="text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
 
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <?php
-                                $value = old('description_ar', $aboutUs ? $aboutUs->description_ar : null);
-
-                                ?>
-                                <label class="form-label" for="label">Description Ar <span
-                                        class="text-danger">*</span></label>
-
-                                <textarea name="description_ar" id="editorAr" class="form-control" cols="30" rows="10"
-                                    placeholder="Write Description in Arabic">{{ $value }}</textarea>
-
-                                @error('description_ar')
-                                    <span class="text-danger" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
 
                         </div>
+
 
                     </div>
 
@@ -84,7 +69,6 @@
                 </div>
 
 
-            </div>
 
             <div class="d-flex justify-content-end mb-4">
 
@@ -92,6 +76,7 @@
 
             </div>
 
+        </div>
 
             </form>
 
@@ -109,14 +94,14 @@
 
 @section('js_after')
     <!--
-                            The "super-build" of CKEditor 5 served via CDN contains a large set of plugins and multiple editor types.
-                            See https://ckeditor.com/docs/ckeditor5/latest/installation/getting-started/quick-start.html#running-a-full-featured-editor-from-cdn
-                        -->
+                                The "super-build" of CKEditor 5 served via CDN contains a large set of plugins and multiple editor types.
+                                See https://ckeditor.com/docs/ckeditor5/latest/installation/getting-started/quick-start.html#running-a-full-featured-editor-from-cdn
+                            -->
     <script src="https://cdn.ckeditor.com/ckeditor5/38.1.1/super-build/ckeditor.js"></script>
     <!--
-                            Uncomment to load the Spanish translation
-                            <script src="https://cdn.ckeditor.com/ckeditor5/38.1.1/super-build/translations/es.js"></script>
-                        -->
+                                Uncomment to load the Spanish translation
+                                <script src="https://cdn.ckeditor.com/ckeditor5/38.1.1/super-build/translations/es.js"></script>
+                            -->
 
     <script>
         // This sample still does not showcase all CKEditor 5 features (!)

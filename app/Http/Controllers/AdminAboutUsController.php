@@ -14,10 +14,10 @@ class AdminAboutUsController extends Controller
      */
     public function index()
     {
-        $aboutUs=AboutUs::first();
+        $aboutUs = AboutUs::first();
 
 
-        return view("admin.about-us.index",compact("aboutUs"));
+        return view("admin.about-us.index", compact("aboutUs"));
     }
 
     /**
@@ -72,16 +72,25 @@ class AdminAboutUsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate(["description_en"=>"required","description_ar"=>"required"]);
-
-        $aboutUs=AboutUs::findOrFail($id);
-
-        $aboutUs->update([
-            "description_en"=>$request->description_en,
-            "description_ar"=>$request->description_ar
+        $request->validate([
+            "image" => "required|image"
         ]);
 
-        return redirect()->route("admin.about-us.index")->with("success","About Us updated successfully");
+        $aboutUs = AboutUs::findOrFail($id);
+
+        if($aboutUs->image){
+            unlink(public_path("storage/".$aboutUs->image));
+        }
+
+        $image = $request->file("image")->store("about-us", "public");
+
+
+
+        $aboutUs->update([
+            "image" => $image
+        ]);
+
+        return redirect()->route("admin.about-us.index")->with("success", "About Us updated successfully");
     }
 
     /**
