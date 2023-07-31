@@ -153,7 +153,7 @@
                     <div class="content-side">
                         <ul class="nav-main">
                             <li class="nav-main-item">
-                                <a class="nav-main-link{{ request()->is('admin') ? ' active' : '' }}" href="/dashboard">
+                                <a class="nav-main-link{{ request()->is('admin') ? ' active' : '' }}" href="{{ route("admin.dashboard.index") }}">
                                     <i class="nav-main-link-icon si si-cursor"></i>
                                     <span class="nav-main-link-name">Dashboard</span>
                                 </a>
