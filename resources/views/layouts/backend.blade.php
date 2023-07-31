@@ -21,13 +21,13 @@
         <!-- Fonts and Styles -->
         @yield('css_before')
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-        <link rel="stylesheet" id="css-main" href="{{ mix('/css/oneui.css') }}">
+        <link rel="stylesheet" id="css-main" href="{{ asset('/css/oneui.css') }}">
 
         <link rel="stylesheet" href="{{asset('js/plugins/select2/css/select2.min.css')}}">
 
 
         <!-- You can include a specific file from public/css/themes/ folder to alter the default color theme of the template. eg: -->
-        <!-- <link rel="stylesheet" id="css-theme" href="{{ mix('/css/themes/amethyst.css') }}"> -->
+        <!-- <link rel="stylesheet" id="css-theme" href="{{ asset('/css/themes/amethyst.css') }}"> -->
         @yield('css_after')
 
         <!-- Scripts -->
@@ -292,10 +292,10 @@
 
             Core libraries and functionality
         -->
-        <script src="{{ mix('js/oneui.app.js') }}"></script>
+        <script src="{{ asset('js/oneui.app.js') }}"></script>
 
         <!-- Laravel Scaffolding JS -->
-        <!-- <script src="{{ mix('/js/laravel.app.js') }}"></script> -->
+        <!-- <script src="{{ asset('/js/laravel.app.js') }}"></script> -->
 
         <script src="{{ asset('js/lib/jquery.min.js') }}"></script>
 
