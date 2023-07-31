@@ -180,7 +180,7 @@
 
                             </li>
                             <li class="nav-main-item ">
-                                <a class="nav-main-link " href="{{ route("home.about-us") }}">
+                                <a class="nav-main-link " href="{{ route("home.contact-us") }}">
                                     {{ __('Contact Us') }}
                                 </a>
 
