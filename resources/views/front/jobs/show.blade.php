@@ -42,13 +42,8 @@
 
                         <div class="block-header block-header-default d-flex justify-content-between">
 
-                            <div>
-                                <h3 class="block-title">
-                                    {{ $job->title }}
-                                </h3>
-                            </div>
 
-                            <div class="ml-2 d-flex justify-content-end">
+
 
                                 <a target="__blank"
                                     href="https://wa.me/?text={{ route('home.job', ['id' => $job->id, 'slug' => $job->slug]) }}">
@@ -67,7 +62,7 @@
                                     <i class="fab fa-linkedin fa-2x"></i>
                                 </a>
 
-                            </div>
+                         
                         </div>
 
 
