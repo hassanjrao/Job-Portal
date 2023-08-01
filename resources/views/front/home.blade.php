@@ -1,6 +1,11 @@
 @extends('layouts.front')
 
 @section('content')
+
+
+<div >
+    <img src="{{ asset('logo/logo_svg.svg') }}" alt="Logo" class="img-fluid" style="width:100%">
+</div>
     <!-- Page Content -->
     <div class="content">
 
@@ -25,7 +30,7 @@
 
         <section>
 
-          
+
 
             <div class="row">
 

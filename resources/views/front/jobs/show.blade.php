@@ -5,6 +5,10 @@
 @section('content')
 
 
+<div>
+    <img src="{{ asset(Storage::url($job->image)) }}" alt="Logo" class="img-fluid" style="width:100%">
+</div>
+
     <div class="bg-body-light">
         <div class="content content-full">
             <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center py-2">
@@ -62,7 +66,7 @@
                                     <i class="fab fa-linkedin fa-2x"></i>
                                 </a>
 
-                         
+
                         </div>
 
 

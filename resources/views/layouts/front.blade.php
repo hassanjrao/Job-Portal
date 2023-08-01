@@ -16,7 +16,7 @@
     <meta property="og:title" content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework">
     <meta property="og:site_name" content="OneUI">
     <meta property="og:description"
-        content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+        content="">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
@@ -130,16 +130,9 @@
 
 
             <!-- Navigation -->
-           
+
             <!-- END Navigation -->
 
-            <div >
-
-                <img src="{{ asset('logo/logo_svg.svg') }}" alt="Logo" class="img-fluid" style="width:100%">
-
-
-
-            </div>
 
 
             @yield('content')
