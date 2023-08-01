@@ -25,18 +25,7 @@
 
         <section>
 
-            <div class="row">
-
-                <div class="col-lg-12 text-center">
-
-                    <h4>
-
-                        {{ __('Latest Jobs') }}
-                    </h4>
-
-
-                </div>
-            </div>
+          
 
             <div class="row">
 
