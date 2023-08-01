@@ -149,38 +149,38 @@
                         <ul class="nav-main  nav-main-horizontal nav-main-hover">
                             <li class="nav-main-item">
 
-                                    {{-- <img src="{{ asset('logo/main_logo.png') }}" alt="Logo"> --}}
-                                    <select class="nav-main-link" onchange="langChanged(this)" class="form-select">
-                                        <option value="en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>
-                                            {{ __('English') }}</option>
-                                        <option value="ar" {{ app()->getLocale() == 'ar' ? 'selected' : '' }}>
-                                            {{ __('Arabic') }}
-                                        </option>
-                                    </select>
+                                {{-- <img src="{{ asset('logo/main_logo.png') }}" alt="Logo"> --}}
+                                <select class="nav-main-link" onchange="langChanged(this)" class="form-select">
+                                    <option value="en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>
+                                        {{ __('English') }}</option>
+                                    <option value="ar" {{ app()->getLocale() == 'ar' ? 'selected' : '' }}>
+                                        {{ __('Arabic') }}
+                                    </option>
+                                </select>
 
                             </li>
 
                             <li class="nav-main-item">
-                                <a class="nav-main-link " href="bd_dashboard.html">
+                                <a class="nav-main-link " href="{{ route('home') }}">
                                     {{-- <img src="{{ asset('logo/main_logo.png') }}" alt="Logo"> --}}
                                     {{ date('M d, Y') }}
                                 </a>
                             </li>
 
                             <li class="nav-main-item ms-lg-auto">
-                                <a class="nav-main-link " href="{{ route("home") }}">
+                                <a class="nav-main-link " href="{{ route('home') }}">
                                     {{ __('Home') }}
                                 </a>
 
                             </li>
                             <li class="nav-main-item ">
-                                <a class="nav-main-link " href="{{ route("home.about-us") }}">
+                                <a class="nav-main-link " href="{{ route('home.about-us') }}">
                                     {{ __('About Us') }}
                                 </a>
 
                             </li>
                             <li class="nav-main-item ">
-                                <a class="nav-main-link " href="{{ route("home.contact-us") }}">
+                                <a class="nav-main-link " href="{{ route('home.contact-us') }}">
                                     {{ __('Contact Us') }}
                                 </a>
 
@@ -217,30 +217,12 @@
             </div>
             <!-- END Navigation -->
 
-            <div class="bg-custom-primary">
-                <div class="content content-full">
+            <div >
 
-
-                    <div class="content-header p-5">
-                        <div class="row align-items-center justify-content-center ">
-
-                            <div class="col-lg-6">
-
-                                <a class="fw-semibold fs-5 tracking-wider text-white me-3" href="{{ route("home") }}">
-                                    <img src="{{ asset('logo/main_logo.png') }}" alt="Logo" class="img-fluid">
-                                </a>
-
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    {{-- </div> --}}
+                <img src="{{ asset('logo/logo_svg.svg') }}" alt="Logo" class="img-fluid" style="width:100%">
 
 
 
-                </div>
             </div>
 
 
@@ -285,11 +267,11 @@
         One.helpersOnLoad(['jq-select2']);
     </script>
 
-<script>
-    function langChanged(e){
-        window.location.href = "{{ route('lang.change') }}" + "?lang=" + e.value;
-    }
-</script>
+    <script>
+        function langChanged(e) {
+            window.location.href = "{{ route('lang.change') }}" + "?lang=" + e.value;
+        }
+    </script>
 
     @yield('js_after')
 
