@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            {{-- <div class="row">
+            <div class="row">
 
                 <div class="col-lg-12 text-center">
 
@@ -64,9 +64,9 @@
 
                     </ul>
                 </div>
-            </div> --}}
+            </div>
 
-            <div class="row">
+            {{-- <div class="row"> --}}
 
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9764394862584545"
                     crossorigin="anonymous"></script>
@@ -77,7 +77,7 @@
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
 
-            </div>
+            {{-- </div> --}}
 
             <div class="row items-push">
 
