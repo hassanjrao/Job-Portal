@@ -2,6 +2,8 @@
 
 @section('title', $job->title)
 
+@section("meta_title",config("app.name")." - ".$job->title)
+@section("meta_description",config("app.name")." - ".$job->title)
 <style>
     #bgi {
         background-image: url('{{ asset('logo/logo_svg.svg') }}');
@@ -12,18 +14,6 @@
         width: 100%;
     }
 </style>
-
-@section("meta")
-    <!-- Open Graph Meta -->
-    <meta property="og:title" content="{{ @yield("title") }} - {{ $job->title }}">
-    <meta property="og:site_name" content="OneUI">
-    <meta property="og:description"
-        content="{{ @yield("title") }} - {{ $job->title }}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-
-@endsection
 
 @section('content')
 

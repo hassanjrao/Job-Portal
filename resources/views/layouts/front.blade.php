@@ -8,12 +8,18 @@
     <title>@yield('title', 'Home')</title>
 
     <meta name="description"
-        content="{{ @yield('title') }}">
+        content="@yield("meta_description")">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
 
-    @yield("meta")
-
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="@yield("meta_title")">
+    <meta property="og:site_name" content="{{ config("app.name") }}">
+    <meta property="@yield("meta_property")"
+        content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ config("app.url") }}">
+    <meta property="og:image" content="">
 
     <!-- Icons -->
     <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
