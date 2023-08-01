@@ -8,18 +8,12 @@
     <title>@yield('title', 'Home')</title>
 
     <meta name="description"
-        content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+        content="{{ @yield('title') }}">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
 
-    <!-- Open Graph Meta -->
-    <meta property="og:title" content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework">
-    <meta property="og:site_name" content="OneUI">
-    <meta property="og:description"
-        content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
+    @yield("meta")
+
 
     <!-- Icons -->
     <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->

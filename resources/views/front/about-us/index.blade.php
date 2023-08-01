@@ -5,7 +5,7 @@
 @section('content')
 
 
-<div >
+<div style="background-image: url('{{ asset("logo/logo_svg.svg") }}')">
     <img src="{{ asset('logo/logo_svg.svg') }}" alt="Logo" class="img-fluid" style="width:100%">
 </div>
 
