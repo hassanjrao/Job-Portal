@@ -37,17 +37,17 @@
 
     <style>
         .btn-custom-primary {
-            background: #4FA0BA;
+            background: #30B0D0;
             border: 1px solid white;
             color: white;
         }
 
         .bg-custom-primary {
-            background: #4FA0BA !important;
+            background: #30B0D0 !important;
         }
 
         .text-custom-primary {
-            color: #4FA0BA;
+            color: #30B0D0;
         }
 
         @media (max-width: 768px) {
