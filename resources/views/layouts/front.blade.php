@@ -130,7 +130,7 @@
 
 
             <!-- Navigation -->
-            <div class="bg-body-extra-light">
+            {{-- <div class="bg-body-extra-light">
                 <div class="content py-3">
                     <!-- Toggle Main Navigation -->
                     {{-- <div class="d-lg-none">
@@ -214,7 +214,7 @@
                     </div>
                     <!-- END Main Navigation -->
                 </div>
-            </div>
+            </div> --}}
             <!-- END Navigation -->
 
             <div >
