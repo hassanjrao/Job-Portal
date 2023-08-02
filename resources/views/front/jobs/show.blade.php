@@ -4,6 +4,7 @@
 
 @section("meta_title",config("app.name")." - ".$job->title)
 @section("meta_description",config("app.name")." - ".$job->title)
+@section("meta_image",asset(Storage::url($job->image)))
 <style>
     #bgi {
         background-image: url('{{ asset("logo/onyl_arr.svg") }}') ;
@@ -68,6 +69,7 @@
 
 
     <div id="bgi" class="text-center" >
+
         <img src="{{ asset(Storage::url($job->image)) }}" alt="Logo" style="height: 200px; margin-top: 40px">
     </div>
 

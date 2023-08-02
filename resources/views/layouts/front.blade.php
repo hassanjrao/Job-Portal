@@ -19,7 +19,7 @@
         content="">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ config("app.url") }}">
-    <meta property="og:image" content="">
+    <meta property="og:image" content="@yield("meta_image")">
 
     <!-- Icons -->
     <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
