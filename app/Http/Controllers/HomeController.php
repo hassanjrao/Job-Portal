@@ -7,10 +7,12 @@ use App\Models\Job;
 use App\Models\JobCategory;
 use App\Models\Location;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class HomeController extends Controller
 {
     public function index(Request $request){
+
 
 
         $categorySelected=$request->category ?? "all";

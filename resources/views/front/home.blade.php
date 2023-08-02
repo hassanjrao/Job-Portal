@@ -132,7 +132,7 @@
 
                     @if ($ind != 0 && $ind % 5 == 0)
                         <div class="col-md-6 col-xl-12">
-                            add
+                            
                             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9764394862584545"
                                 crossorigin="anonymous"></script>
                             <!-- square ad -->
