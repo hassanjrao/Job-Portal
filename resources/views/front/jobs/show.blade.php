@@ -112,19 +112,19 @@
 
 
                             <a target="__blank"
-                                href="https://wa.me/?text={{ route('home.job', ['id' => $job->id, 'slug' => $job->slug]) }}">
+                                href="https://wa.me/?text={{ route('home.job', ['id' => $job->id]) }}">
                                 <i class="fab fa-whatsapp fa-2x"></i>
                             </a>
                             <a target="__blank"
-                                href="https://www.facebook.com/sharer/sharer.php?u={{ route('home.job', ['id' => $job->id, 'slug' => $job->slug]) }}">
+                                href="https://www.facebook.com/sharer/sharer.php?u={{ route('home.job', ['id' => $job->id]) }}">
                                 <i class="fab fa-facebook fa-2x"></i>
                             </a>
                             <a target="__blank"
-                                href="https://twitter.com/intent/tweet?text={{ route('home.job', ['id' => $job->id, 'slug' => $job->slug]) }}">
+                                href="https://twitter.com/intent/tweet?text={{ route('home.job', ['id' => $job->id]) }}">
                                 <i class="fab fa-twitter fa-2x"></i>
                             </a>
                             <a target="__blank"
-                                href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('home.job', ['id' => $job->id, 'slug' => $job->slug]) }}">
+                                href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('home.job', ['id' => $job->id]) }}">
                                 <i class="fab fa-linkedin fa-2x"></i>
                             </a>
 

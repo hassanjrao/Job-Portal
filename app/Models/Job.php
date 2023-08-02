@@ -12,7 +12,7 @@ class Job extends Model
 
     protected $guarded = [];
 
-    protected $appends=["type_name_en_ar","title","slug","description"];
+    protected $appends=["title","slug","description"];
 
     public function category()
     {

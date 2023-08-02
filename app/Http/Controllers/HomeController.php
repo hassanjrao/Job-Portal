@@ -40,7 +40,7 @@ class HomeController extends Controller
     }
 
 
-    public function job($id,$slug){
+    public function job($id){
 
         $job=Job::findOrFail($id);
 
