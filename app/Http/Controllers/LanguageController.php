@@ -13,6 +13,8 @@ class LanguageController extends Controller
         App::setLocale($lang);
         session()->put('locale', $lang);
 
+        session()->put("locale_changed",true);
+
         return redirect()->back();
     }
 

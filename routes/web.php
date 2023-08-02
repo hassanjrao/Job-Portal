@@ -22,19 +22,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/",[HomeController::class,"index"])->name("home");
+Route::get("/",[HomeController::class,"index"])->name("home")->middleware("check.locale");
 
-Route::get("about-us",[HomeController::class,"aboutUs"])->name("home.about-us");
+Route::get("about-us",[HomeController::class,"aboutUs"])->name("home.about-us")->middleware("check.locale");;
 
-Route::get("contact-us",[HomeController::class,"contactUs"])->name("home.contact-us");
+Route::get("contact-us",[HomeController::class,"contactUs"])->name("home.contact-us")->middleware("check.locale");;
 
-Route::get("jobs/{id}/{slug}",[HomeController::class,"job"])->name("home.job");
+Route::get("jobs/{id}/{slug}",[HomeController::class,"job"])->name("home.job")->middleware("check.locale");;
 
 Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);
 
 Route::get('lang/change', [LanguageController::class, 'change'])->name('lang.change');
 
-Route::middleware(["auth"])->group(function () {
+Route::middleware(["auth","set_default_lang"])->group(function () {
 
     Route::prefix("admin")->name("admin.")->group(function(){
         Route::get("",[AdminDashboardController::class,"index"])->name("dashboard.index");
