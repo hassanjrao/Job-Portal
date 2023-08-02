@@ -1,11 +1,9 @@
 @extends('layouts.front')
 
 @section('content')
-
-
-<div >
-    <img src="{{ asset('logo/logo_svg.svg') }}" alt="Logo" class="img-fluid" style="width:100%">
-</div>
+    <div>
+        <img src="{{ asset('logo/logo_svg.svg') }}" alt="Logo" class="img-fluid" style="width:100%">
+    </div>
     <!-- Page Content -->
     <div class="content">
 
@@ -62,21 +60,40 @@
 
             <div class="row">
 
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9764394862584545"
-                    crossorigin="anonymous"></script>
-                <!-- square ad -->
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9764394862584545"
-                    data-ad-slot="4866663033" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                <div class="col-lg-6">
+
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9764394862584545"
+                        crossorigin="anonymous"></script>
+                    <!-- square ad -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9764394862584545"
+                        data-ad-slot="4866663033" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9764394862584545"
+                        crossorigin="anonymous"></script>
+                    <!-- square ad -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9764394862584545"
+                        data-ad-slot="4866663033" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+
+
 
             </div>
 
-            <div class="row items-push">
+            <div class="row">
 
 
-                @foreach ($jobs as $job)
+                @foreach ($jobs as $ind => $job)
                     <div class="col-md-6 col-xl-6">
                         <div class="block block-rounded">
 
@@ -97,8 +114,6 @@
                                             {{ $job->created_at->format('Y-m-d') }}
                                         </div>
 
-
-
                                     </div>
 
                                 </div>
@@ -114,6 +129,21 @@
 
                         </div>
                     </div>
+
+                    @if ($ind != 0 && $ind % 5 == 0)
+                        <div class="col-md-6 col-xl-12">
+                            add
+                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9764394862584545"
+                                crossorigin="anonymous"></script>
+                            <!-- square ad -->
+                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9764394862584545"
+                                data-ad-slot="4866663033" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || [])
+                                .push({});
+                            </script>
+                        </div>
+                    @endif
                 @endforeach
 
                 {{ $jobs->links() }}
