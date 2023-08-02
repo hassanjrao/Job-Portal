@@ -143,12 +143,22 @@
         <footer id="page-footer" class="bg-body-extra-light">
             <div class="content py-3">
                 <div class="row fs-sm justify-content-between">
-                    <div class="col-sm-2 order-sm-2 py-1 d-flex justify-content-between">
+                    <div class="col-sm-4 order-sm-2 py-1 d-flex justify-content-between">
                          <a class="fw-semibold"
                             href="{{ route("home.contact-us") }}" >{{ __('Contact Us') }}</a>
 
                             <a class="fw-semibold"
                             href="{{ route("home.contact-us") }}" >{{ __('About Us') }}</a>
+
+                            <select  onchange="langChanged(this)">
+                                @if(app()->getLocale() == 'ar')
+                                    <option value="ar" selected>العربية</option>
+                                    <option value="en">English</option>
+                                @else
+                                    <option value="ar">العربية</option>
+                                    <option value="en" selected>English</option>
+                                @endif
+                            </select>
                     </div>
                     <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-start">
                         <a class="fw-semibold" href="{{ route("home") }}"
