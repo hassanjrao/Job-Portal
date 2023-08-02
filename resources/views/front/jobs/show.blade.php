@@ -6,13 +6,61 @@
 @section("meta_description",config("app.name")." - ".$job->title)
 <style>
     #bgi {
-        background-image: url('{{ asset('logo/logo_svg.svg') }}');
+        background-image: url('{{ asset("logo/onyl_arr.svg") }}') ;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        height: 300px;
+        height: 500px;
         width: 100%;
     }
+
+    /* add media queries for bgi */
+
+    @media (max-width: 768px) {
+        #bgi {
+            background-image: url('{{ asset("logo/onyl_arr.svg") }}') ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 576px) {
+        #bgi {
+            background-image: url('{{ asset("logo/onyl_arr.svg") }}') ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 290;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 400px) {
+        #bgi {
+            background-image: url('{{ asset("logo/onyl_arr.svg") }}') ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 283px;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 300px) {
+        #bgi {
+            background-image: url('{{ asset("logo/onyl_arr.svg") }}') ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100px;
+            width: 100%;
+        }
+    }
+
+
 </style>
 
 @section('content')
@@ -20,7 +68,7 @@
 
 
     <div id="bgi" class="text-center" style="border:1px solid red;">
-        <img src="{{ asset(Storage::url($job->image)) }}" alt="Logo" style="height: 100px; background: white">
+        <img src="{{ asset(Storage::url($job->image)) }}" alt="Logo" style="height: 100px; margin-top: 40px">
     </div>
 
     <div class="bg-body-light">
