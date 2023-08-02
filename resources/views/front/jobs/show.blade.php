@@ -68,7 +68,7 @@
 
 
     <div id="bgi" class="text-center" >
-        <img src="{{ asset(Storage::url($job->image)) }}" alt="Logo" style="height: 100px; margin-top: 40px">
+        <img src="{{ asset(Storage::url($job->image)) }}" alt="Logo" style="height: 200px; margin-top: 40px">
     </div>
 
     <div class="bg-body-light">
