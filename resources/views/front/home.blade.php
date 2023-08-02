@@ -94,6 +94,22 @@
 
 
                 @foreach ($jobs as $ind => $job)
+
+                @if ($ind != 0 && $ind % 5 == 0)
+                <div class="col-md-6 col-xl-12">
+
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9764394862584545"
+                        crossorigin="anonymous"></script>
+                    <!-- square ad -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9764394862584545"
+                        data-ad-slot="4866663033" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || [])
+                        .push({});
+                    </script>
+                </div>
+            @endif
+
                     <div class="col-md-6 col-xl-6">
                         <div class="block block-rounded">
 
@@ -130,20 +146,7 @@
                         </div>
                     </div>
 
-                    @if ($ind != 0 && $ind % 5 == 0)
-                        <div class="col-md-6 col-xl-12">
 
-                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9764394862584545"
-                                crossorigin="anonymous"></script>
-                            <!-- square ad -->
-                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9764394862584545"
-                                data-ad-slot="4866663033" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                            <script>
-                                (adsbygoogle = window.adsbygoogle || [])
-                                .push({});
-                            </script>
-                        </div>
-                    @endif
                 @endforeach
 
                 {{ $jobs->links() }}
