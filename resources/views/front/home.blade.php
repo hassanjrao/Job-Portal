@@ -136,7 +136,7 @@
                                 </div>
 
                                 <div class="border">
-                                    <img  class="job-image"
+                                    <img  class="job-card-image"
                                         src="{{ Storage::url($job->image) }}" alt="">
                                 </div>
 
