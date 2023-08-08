@@ -57,22 +57,22 @@
 
         @media (max-width: 768px) {
             .job-card-image {
-                width: 100px;
-                height: 100px;
+                width: 110px;
+                height: 128px;
             }
         }
 
         @media (max-width: 576px) {
             .job-card-image {
                 width: 100px;
-                height: 100px;
+                height: 103px;
             }
 
         }
 
         @media (max-width: 400px) {
             .job-card-image {
-                width: 160px;
+                width: 113px;
                 height: 126px;
             }
 
@@ -81,7 +81,7 @@
 
         @media (max-width: 300px) {
             .job-card-image {
-                width: 160px;
+                width: 113px;
                 height: 126px;
             }
 
