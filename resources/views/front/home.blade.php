@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            {{-- <div class="row">
 
                 <div class="col-lg-6">
 
@@ -89,14 +89,14 @@
 
 
 
-            </div>
+            </div> --}}
 
             <div class="row">
 
 
                 @foreach ($jobs as $ind => $job)
 
-                @if ($ind != 0 && $ind % 5 == 0)
+                {{-- @if ($ind != 0 && $ind % 5 == 0)
                 <div class="col-md-6 col-xl-12">
 
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9764394862584545"
@@ -109,7 +109,7 @@
                         .push({});
                     </script>
                 </div>
-            @endif
+            @endif --}}
 
                     <div class="col-md-6 col-xl-6">
                         <div class="block block-rounded">
