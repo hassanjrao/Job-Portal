@@ -136,7 +136,7 @@
                                 </div>
 
                                 <div class="border">
-                                    <img class="img-fluid" class="job-image" 
+                                    <img  class="job-image"
                                         src="{{ Storage::url($job->image) }}" alt="">
                                 </div>
 
