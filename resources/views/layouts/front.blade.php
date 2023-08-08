@@ -7,19 +7,17 @@
 
     <title>@yield('title', 'Home')</title>
 
-    <meta name="description"
-        content="@yield("meta_description")">
+    <meta name="description" content="@yield('meta_description')">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="@yield("meta_title")">
-    <meta property="og:site_name" content="{{ config("app.name") }}">
-    <meta property="@yield("meta_property")"
-        content="">
+    <meta property="og:title" content="@yield('meta_title')">
+    <meta property="og:site_name" content="{{ config('app.name') }}">
+    <meta property="@yield('meta_property')" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ config("app.url") }}">
-    <meta property="og:image" content="@yield("meta_image")">
+    <meta property="og:url" content="{{ config('app.url') }}">
+    <meta property="og:image" content="@yield('meta_image')">
 
     <!-- Icons -->
     <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
@@ -50,17 +48,45 @@
             color: #30B0D0;
         }
 
+
+        .job-card-image {
+            width: 100px;
+            height: 100px;
+        }
+
+
         @media (max-width: 768px) {
             .job-card-image {
-                width: 11rem !important;
+                width: 100px;
+                height: 100px;
             }
         }
 
-        @media (min-width: 768px) {
+        @media (max-width: 576px) {
             .job-card-image {
-                width: 7.1rem !important;
+                width: 100px;
+                height: 100px;
             }
+
         }
+
+        @media (max-width: 400px) {
+            .job-card-image {
+                width: 160px;
+                height: 126px;
+            }
+
+
+        }
+
+        @media (max-width: 300px) {
+            .job-card-image {
+                width: 160px;
+                height: 126px;
+            }
+
+        }
+
 
         .custom-image {
             max-width: 100%;
@@ -144,25 +170,22 @@
             <div class="content py-3">
                 <div class="row fs-sm justify-content-between">
                     <div class="col-sm-4 order-sm-2 py-1 d-flex justify-content-between">
-                         <a class="fw-semibold"
-                            href="{{ route("home.contact-us") }}" >{{ __('Contact Us') }}</a>
+                        <a class="fw-semibold" href="{{ route('home.contact-us') }}">{{ __('Contact Us') }}</a>
 
-                            <a class="fw-semibold"
-                            href="{{ route("home.contact-us") }}" >{{ __('About Us') }}</a>
+                        <a class="fw-semibold" href="{{ route('home.contact-us') }}">{{ __('About Us') }}</a>
 
-                            <select  onchange="langChanged(this)">
-                                @if(app()->getLocale() == 'ar')
-                                    <option value="ar" selected>العربية</option>
-                                    <option value="en">English</option>
-                                @else
-                                    <option value="ar">العربية</option>
-                                    <option value="en" selected>English</option>
-                                @endif
-                            </select>
+                        <select onchange="langChanged(this)">
+                            @if (app()->getLocale() == 'ar')
+                                <option value="ar" selected>العربية</option>
+                                <option value="en">English</option>
+                            @else
+                                <option value="ar">العربية</option>
+                                <option value="en" selected>English</option>
+                            @endif
+                        </select>
                     </div>
                     <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-start">
-                        <a class="fw-semibold" href="{{ route("home") }}"
-                            target="_blank">{{ config('app.name') }}</a>
+                        <a class="fw-semibold" href="{{ route('home') }}" target="_blank">{{ config('app.name') }}</a>
                         &copy; <span data-toggle="year-copy"></span>
                     </div>
                 </div>

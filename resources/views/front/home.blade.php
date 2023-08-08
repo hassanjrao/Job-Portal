@@ -1,5 +1,6 @@
 @extends('layouts.front')
 
+
 @section('content')
     <div>
         <img src="{{ asset('logo/logo_svg.svg') }}" alt="Logo" class="img-fluid" style="width:100%">
@@ -135,7 +136,7 @@
                                 </div>
 
                                 <div class="border">
-                                    <img class="img-fluid" style="width: 100px; height: 100px;"
+                                    <img class="img-fluid" class="job-image" 
                                         src="{{ Storage::url($job->image) }}" alt="">
                                 </div>
 
