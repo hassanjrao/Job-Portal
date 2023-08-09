@@ -202,6 +202,10 @@ class AdminJobController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $job=Job::findOrFail($id);
+
+        $job->delete();
+
+        return redirect()->route("admin.jobs.index")->with("success","Job has been deleted successfully");
     }
 }
