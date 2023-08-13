@@ -33,6 +33,11 @@
 
     <link rel="stylesheet" href="{{ asset('js/plugins/select2/css/select2.min.css') }}">
 
+    <script>
+        async src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9764394862584545"
+        crossorigin = "anonymous"
+    </script>
+
     <style>
         .btn-custom-primary {
             background: #30B0D0;
