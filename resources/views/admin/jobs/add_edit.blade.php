@@ -152,8 +152,9 @@
                                 <label class="form-label" for="label">Location <span class="text-danger">*</span></label>
 
                                 <select class="form-select" id="location" name="location" style="width: 100%;">
-
+                                    <option value="" @if (!$value) selected @endif>All</option>
                                     @foreach ($locations as $location)
+
                                         <option value="{{ $location->id }}"
                                             @if ($location->id == $value) selected @endif>
                                             {{ $location->name_en_ar }}

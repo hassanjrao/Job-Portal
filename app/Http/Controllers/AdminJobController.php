@@ -97,7 +97,7 @@ class AdminJobController extends Controller
             "description_en"=>"required",
             "description_ar"=>"required",
             "category"=>"required|exists:job_categories,id",
-            "location"=>"required|exists:locations,id",
+            "location"=>"nullable|exists:locations,id",
             "image"=>"required|image"
         ]);
 
@@ -166,7 +166,7 @@ class AdminJobController extends Controller
             "description_en"=>"required",
             "description_ar"=>"required",
             "category"=>"required|exists:job_categories,id",
-            "location"=>"required|exists:locations,id",
+            "location"=>"nullable|exists:locations,id",
             "image"=>"nullable|image"
         ]);
 
