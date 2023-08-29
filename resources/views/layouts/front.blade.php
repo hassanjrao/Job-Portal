@@ -38,7 +38,7 @@
         crossorigin = "anonymous">
     </script>
 
-<script type='text/javascript' src='//pl20410342.highcpmrevenuegate.com/1c/1b/b9/1c1bb9aba4f064021e21974e41eba76e.js'></script>
+<script async type='text/javascript' src='//pl20410342.highcpmrevenuegate.com/1c/1b/b9/1c1bb9aba4f064021e21974e41eba76e.js'></script>
 
 
     <style>

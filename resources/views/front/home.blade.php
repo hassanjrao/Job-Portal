@@ -109,7 +109,7 @@
                     </script> --}}
 
 
-                            <script type="text/javascript">
+                            <script async type="text/javascript">
                                 atOptions = {
                                     'key': '33b7c599e717c17bcd82712d10457100',
                                     'format': 'iframe',
