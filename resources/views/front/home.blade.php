@@ -95,11 +95,10 @@
 
 
                 @foreach ($jobs as $ind => $job)
+                    @if ($ind != 0 && $ind % 5 == 0)
+                        <div class="col-md-6 col-xl-12">
 
-                {{-- @if ($ind != 0 && $ind % 5 == 0)
-                <div class="col-md-6 col-xl-12">
-
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9764394862584545"
+                            {{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9764394862584545"
                         crossorigin="anonymous"></script>
                     <!-- square ad -->
                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9764394862584545"
@@ -107,9 +106,22 @@
                     <script>
                         (adsbygoogle = window.adsbygoogle || [])
                         .push({});
-                    </script>
-                </div>
-            @endif --}}
+                    </script> --}}
+
+
+                            <script type="text/javascript">
+                                atOptions = {
+                                    'key': '33b7c599e717c17bcd82712d10457100',
+                                    'format': 'iframe',
+                                    'height': 50,
+                                    'width': 320,
+                                    'params': {}
+                                };
+                                document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') +
+                                    '://www.profitablecreativeformat.com/33b7c599e717c17bcd82712d10457100/invoke.js"></scr' + 'ipt>');
+                            </script>
+                        </div>
+                    @endif
 
                     <div class="col-md-6 col-xl-6">
                         <div class="block block-rounded">
@@ -136,8 +148,7 @@
                                 </div>
 
                                 <div class="border">
-                                    <img  class="job-card-image"
-                                        src="{{ Storage::url($job->image) }}" alt="">
+                                    <img class="job-card-image" src="{{ Storage::url($job->image) }}" alt="">
                                 </div>
 
                             </div>
@@ -146,8 +157,6 @@
 
                         </div>
                     </div>
-
-
                 @endforeach
 
                 {{ $jobs->links() }}

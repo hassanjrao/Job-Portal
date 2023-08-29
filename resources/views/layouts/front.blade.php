@@ -33,10 +33,13 @@
 
     <link rel="stylesheet" href="{{ asset('js/plugins/select2/css/select2.min.css') }}">
 
-    <script>
+    <script
         async src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9764394862584545"
-        crossorigin = "anonymous"
+        crossorigin = "anonymous">
     </script>
+
+<script type='text/javascript' src='//pl20410342.highcpmrevenuegate.com/1c/1b/b9/1c1bb9aba4f064021e21974e41eba76e.js'></script>
+
 
     <style>
         .btn-custom-primary {
