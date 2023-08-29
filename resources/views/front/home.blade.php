@@ -117,7 +117,7 @@
                                     'width': 320,
                                     'params': {}
                                 };
-                                document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') +
+                                document.write('<scr' + 'ipt async type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') +
                                     '://www.profitablecreativeformat.com/33b7c599e717c17bcd82712d10457100/invoke.js"></scr' + 'ipt>');
                             </script>
                         </div>
